@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B5174E4B-F475-4532-8D58-A48FD3C27546}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FileEnhanced</RootNamespace>
+    <AssemblyName>FileEnhanced</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Main.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.20.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\DeltaPlus\packages\DocumentFormat.OpenXml.2.20.0\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniWord, Version=0.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\DeltaPlus\packages\MiniWord.0.7.0\lib\net45\MiniWord.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Global.cs" />
+    <Compile Include="Common\InfoMetaEntity.cs" />
+    <Compile Include="Forms\TemplateSetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TemplateSetForm.Designer.cs">
+      <DependentUpon>TemplateSetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ViewFileCardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewFileCardForm.Designer.cs">
+      <DependentUpon>ViewFileCardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Add2TagGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Add2TagGroupForm.Designer.cs">
+      <DependentUpon>Add2TagGroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddGroupTagForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddGroupTagForm.Designer.cs">
+      <DependentUpon>AddGroupTagForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CreateTagGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateTagGroupForm.Designer.cs">
+      <DependentUpon>CreateTagGroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddLibraryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddLibraryForm.Designer.cs">
+      <DependentUpon>AddLibraryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditGroupNameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditGroupNameForm.Designer.cs">
+      <DependentUpon>EditGroupNameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditLibraryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditLibraryForm.Designer.cs">
+      <DependentUpon>EditLibraryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddFileTagForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddFileTagForm.Designer.cs">
+      <DependentUpon>AddFileTagForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FileEnhancedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FileEnhancedForm.Designer.cs">
+      <DependentUpon>FileEnhancedForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditFileDescForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditFileDescForm.Designer.cs">
+      <DependentUpon>EditFileDescForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FilePreviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FilePreviewForm.Designer.cs">
+      <DependentUpon>FilePreviewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Menus\TagGroupCardMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Menus\TagGroupCardMenu.Designer.cs">
+      <DependentUpon>TagGroupCardMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Menus\LibCardMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Menus\LibCardMenu.Designer.cs">
+      <DependentUpon>LibCardMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Menus\TagBtnMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Menus\TagBtnMenu.Designer.cs">
+      <DependentUpon>TagBtnMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FileCardEventArgs.cs" />
+    <Compile Include="Models\PlaceHolder.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\AdTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AdTextBox.Designer.cs">
+      <DependentUpon>AdTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FileCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\FileCard.Designer.cs">
+      <DependentUpon>FileCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\GroupTagButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\HelpUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\HelpUC.Designer.cs">
+      <DependentUpon>HelpUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LibCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\LibCard.Designer.cs">
+      <DependentUpon>LibCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LibraryUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\LibraryUC.Designer.cs">
+      <DependentUpon>LibraryUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\RoundedButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\SearchBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SearchBar.Designer.cs">
+      <DependentUpon>SearchBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SettingUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SettingUC.Designer.cs">
+      <DependentUpon>SettingUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TagBtn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\TagGroupCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TagGroupCard.Designer.cs">
+      <DependentUpon>TagGroupCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TagGroupUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TagGroupUC.Designer.cs">
+      <DependentUpon>TagGroupUC.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\TemplateSetForm.resx">
+      <DependentUpon>TemplateSetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ViewFileCardForm.resx">
+      <DependentUpon>ViewFileCardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Add2TagGroupForm.resx">
+      <DependentUpon>Add2TagGroupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddGroupTagForm.resx">
+      <DependentUpon>AddGroupTagForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreateTagGroupForm.resx">
+      <DependentUpon>CreateTagGroupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddLibraryForm.resx">
+      <DependentUpon>AddLibraryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditGroupNameForm.resx">
+      <DependentUpon>EditGroupNameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditLibraryForm.resx">
+      <DependentUpon>EditLibraryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddFileTagForm.resx">
+      <DependentUpon>AddFileTagForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FileEnhancedForm.resx">
+      <DependentUpon>FileEnhancedForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditFileDescForm.resx">
+      <DependentUpon>EditFileDescForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FilePreviewForm.resx">
+      <DependentUpon>FilePreviewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Menus\TagGroupCardMenu.resx">
+      <DependentUpon>TagGroupCardMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Menus\LibCardMenu.resx">
+      <DependentUpon>LibCardMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Menus\TagBtnMenu.resx">
+      <DependentUpon>TagBtnMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UserControls\AdTextBox.resx">
+      <DependentUpon>AdTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\FileCard.resx">
+      <DependentUpon>FileCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\HelpUC.resx">
+      <DependentUpon>HelpUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\LibCard.resx">
+      <DependentUpon>LibCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\LibraryUC.resx">
+      <DependentUpon>LibraryUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SearchBar.resx">
+      <DependentUpon>SearchBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SettingUC.resx">
+      <DependentUpon>SettingUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TagGroupCard.resx">
+      <DependentUpon>TagGroupCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TagGroupUC.resx">
+      <DependentUpon>TagGroupUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Confirm.png" />
+    <None Include="Assets\CombineSearch.png" />
+    <None Include="Assets\CreateNewGroup.png" />
+    <None Include="Assets\ClearSelection.png" />
+    <None Include="Assets\Menu.png" />
+    <None Include="Assets\More.png" />
+    <None Include="Assets\Less.png" />
+    <None Include="Assets\NewLibrary.png" />
+    <None Include="Assets\ExploreFolder.png" />
+    <None Include="Assets\OpenInFileExploror.png" />
+    <None Include="Assets\EditLibrary.png" />
+    <None Include="Assets\DeleteLibrary.png" />
+    <None Include="Assets\RemoveTag.png" />
+    <None Include="Assets\AddToGroup.png" />
+    <None Include="Assets\SearchTag.png" />
+    <None Include="Assets\Help.png" />
+    <None Include="Assets\Setting.png" />
+    <None Include="Assets\TagGroup.png" />
+    <None Include="Assets\Library.png" />
+    <None Include="Assets\OpenInResourceManager.png" />
+    <None Include="Assets\AddTag.png" />
+    <None Include="Assets\EditDesc.png" />
+    <None Include="Assets\RenameFile.png" />
+    <None Include="Assets\SearchBar.png" />
+    <None Include="Assets\MinimizeButton.png" />
+    <None Include="Assets\Github.png" />
+    <None Include="Assets\Gitee.png" />
+    <Content Include="Main.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
